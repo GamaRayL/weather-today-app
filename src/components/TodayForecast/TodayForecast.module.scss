@@ -1,0 +1,37 @@
+.todayForecast {
+    width: 80px;
+    color: #535353;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #f7f7f7;
+    background: #ffffff;
+    box-shadow: 15px 9px 15px #e8e8e8,
+    0 -4px 15px #ffffff,
+    inset 9px 9px 15px #e8e8e8,
+    inset -9px -9px 15px #ffffff;
+}
+
+.temp {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 960px) {
+    .todayForecast {
+      width: 70px;
+    }
+    .temp {
+        font-size: 18px;
+    }
+}
+
+  @media screen and (max-width: 860px) {
+    .todayForecast {
+      width: 60px;
+    }
+    .icon {
+        width: 34px;
+        height: 34px;
+    }
+  }

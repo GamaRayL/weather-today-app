@@ -1,0 +1,70 @@
+.input {
+    border: none;
+    padding: 15px;
+    background: linear-gradient(145deg, #f3f3f3,#ebebeb);
+    box-shadow: 4px 9px 15px #e8e8e8,
+    inset 9px 9px 15px #e8e8e8,
+    inset -9px -9px 15px #ffffff;
+    color: #535353;
+    font-size: 16px;
+    width: -webkit-fill-available;
+    transition: 0.4s all;
+    outline: none;
+}
+
+::placeholder {
+    color: #53535379;
+}
+
+.cardLoaction {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.4s all;
+    text-align: right;
+
+    &:hover {
+        text-shadow: 4px 9px 8px #cecdcd;
+    }
+    
+    &:active {
+        transition: 0.1s all;
+        text-shadow: 4px 9px 8px #525252;
+    }
+}
+
+.city, .countryCode, .countryName {
+    font-size: 22px;
+    color: #535353;
+    margin-right: 5px;
+}
+
+.countryName, .countryCode, .latitude, .longitude {
+    color: #53535379;
+}
+
+.boxLocation {
+    width: 400px;
+}
+
+.latitude:after {
+    content: " / ";
+}
+
+.latitude, .longitude {
+   font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+    .cardLoaction {
+        padding: 0;
+    }
+    .boxLocation {
+        width: 100%;
+    }
+}
