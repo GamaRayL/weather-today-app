@@ -39,7 +39,7 @@ function App() {
   }, [city]);
 
   async function getGeonamesArray(e) {
-    const api = `http://api.geonames.org/searchJSON?name_startsWith=${e}&maxRows=4&username=gama_ray`;
+    const api = `https://secure.geonames.org/searchJSON?name_startsWith=${e}&maxRows=4&username=gama_ray`;
     try {
       const response = await fetch(api);
       setGeonames(await response.json());
