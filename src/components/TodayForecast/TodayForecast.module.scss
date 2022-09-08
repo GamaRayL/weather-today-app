@@ -34,4 +34,17 @@
         width: 34px;
         height: 34px;
     }
+}
+
+@media screen and (max-width: 435px) {
+  .todayForecast {
+    width: 30px;
   }
+  .icon {
+      width: 24px;
+      height: 24px;
+  }
+  .temp {
+    font-size: 14px;
+}
+}

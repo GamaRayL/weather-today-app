@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: center;
   width: 25%;
-  margin-right: 20px;
 }
 
 .primary__icon {
@@ -72,9 +71,6 @@
 }
 
 @media screen and (max-width: 860px) {
-  .ultraviolet {
-    display: none;
-  }
   .window {
     flex-direction: column;
     align-items: center;
@@ -95,7 +91,7 @@
   .secondary {
     display: flex;
     flex-direction: column-reverse;
-    margin: 15px 15px 0 0;
+    margin: 15px 0 0 0;
   }
   .secondary__day {
     display: flex;
@@ -122,9 +118,11 @@
 }
 
 @media screen and (max-width: 435px) {
-  .secondary__day {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .window {
+    .primary__icon {
+      width: 120px;
+      height: 120px;
+    }
   }
 }
 
