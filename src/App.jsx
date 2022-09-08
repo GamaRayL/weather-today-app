@@ -82,15 +82,15 @@ function App() {
     return <div className={css.error}>{error}</div>;
   }
 
-  const date = new Date(weatherDataFromApi.location.localtime).toLocaleString(
-    "en",
-    {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  );
+  const date = new Date(
+    weatherDataFromApi.location.localtime.replace(/-/g, "/")
+  ).toLocaleString("en", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   const forecastDayReceivedArray =
     weatherDataFromApi.forecast.forecastday[0].hour.map((item) => item);
   const weatherItemsArrayByHour = forecastDayReceivedArray.filter(
