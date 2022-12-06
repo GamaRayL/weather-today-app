@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
+import { fetchGeonamesDate, fetchWeatherDate } from "utils/async";
 import { Window, Toggle, Search } from "components/";
 import { IndicatorsArray } from "components/Indicator";
-import array from "store/weather.json";
+import arWeatherIcons from "store/weather.json";
 import css from "./App.module.scss";
 
 function App() {
@@ -15,38 +16,22 @@ function App() {
   const codeCurrentReceived = weatherDataFromApi
     ? weatherDataFromApi.current.condition.code
     : null;
-  const weatherItem = array.filter((item) => item.code === codeCurrentReceived);
+  const weatherItem = arWeatherIcons.filter(
+    (item) => item.code === codeCurrentReceived
+  );
   const currentHours = weatherDataFromApi
     ? new Date(weatherDataFromApi.location.localtime).getHours()
     : null;
 
   useEffect(() => {
-    async function getSetData() {
-      const api = `http://api.weatherapi.com/v1/forecast.json?key=a0961b2c48bd4a78a2280512221204&q=${city}`;
-      try {
-        const response = await fetch(api);
-        if (response.status >= 400 && response.status <= 599) {
-          setError(response.status);
-        } else {
-          const data = await response.json();
-          setWeatherDataFromApi(data);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getSetData();
+    fetchWeatherDate(city).then((data) =>
+      data.error ? setError(data.error.message) : setWeatherDataFromApi(data)
+    );
   }, [city]);
 
-  async function getGeonamesArray(e) {
-    const api = `https://secure.geonames.org/searchJSON?name_startsWith=${e}&maxRows=4&username=gama_ray`;
-    try {
-      const response = await fetch(api);
-      setGeonames(await response.json());
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  fetchGeonamesDate().then((data) =>
+    data.status ? console.log(data.status.message) : setGeonames(data)
+  );
 
   const indicatorsOfArray = useMemo(
     () => IndicatorsArray(weatherDataFromApi, unit),
@@ -62,7 +47,9 @@ function App() {
   };
 
   const showForWholeDayWeatherIcon = useCallback((item) => {
-    const weatherItem = array.filter((el) => el.code === item.condition.code);
+    const weatherItem = arWeatherIcons.filter(
+      (el) => el.code === item.condition.code
+    );
     const hour = new Date(item.time).getHours();
     if (hour >= 21 || hour <= 6) return weatherItem[0].night;
     else return weatherItem[0].day;
@@ -123,7 +110,7 @@ function App() {
           setCity={setCity}
           setValueOfCity={setValueOfCity}
           valueOfCity={valueOfCity}
-          getGeonamesArray={getGeonamesArray}
+          getGeonamesArray={fetchGeonamesDate}
           geonames={geonames}
           changeCity={changeCity}
         />
