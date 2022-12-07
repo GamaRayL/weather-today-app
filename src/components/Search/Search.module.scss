@@ -10,6 +10,7 @@
     width: -webkit-fill-available;
     transition: 0.4s all;
     outline: none;
+    text-transform: uppercase;
 }
 
 ::placeholder {
@@ -28,7 +29,7 @@
     &:hover {
         text-shadow: 4px 9px 8px #cecdcd;
     }
-    
+
     &:active {
         transition: 0.1s all;
         text-shadow: 4px 9px 8px #525252;

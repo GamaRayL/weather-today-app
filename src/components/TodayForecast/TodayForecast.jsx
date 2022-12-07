@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import arWeather from "store/weather.json";
-import css from "./TodayForecast.module.scss";
+import style from "./TodayForecast.module.scss";
 
 export const TodayForecast = ({ unit, arWeatherItemsByHour }) => {
   const getWholeDayIcon = useCallback((item) => {
@@ -15,15 +15,15 @@ export const TodayForecast = ({ unit, arWeatherItemsByHour }) => {
   return (
     <>
       {arWeatherItemsByHour.map((item) => (
-        <div className={css.todayForecast} key={item.time_epoch}>
+        <div className={style.todayForecast} key={item.time_epoch}>
           <p>{new Date(item.time).getHours()}</p>
           <img
-            className={css.icon}
+            className={style.icon}
             width="62px"
             src={getWholeDayIcon(item)}
             alt=""
           />
-          <p className={css.temp}>
+          <p className={style.temp}>
             {unit
               ? Math.round(item.temp_c) + "°"
               : Math.round(item.temp_f) + "°"}

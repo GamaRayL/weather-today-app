@@ -1,5 +1,5 @@
 import { showWind, showUv } from "components/statements";
-import css from "./Indicator.module.scss";
+import style from "./Indicator.module.scss";
 
 export const arIndicators = (weatherDataFromApi, unit) => {
   if (!weatherDataFromApi) return [];
@@ -69,12 +69,12 @@ export const arIndicators = (weatherDataFromApi, unit) => {
 
 export const Indicator = ({ indicatorsArray }) => {
   return indicatorsArray.map((item) => (
-    <div key={item.head} className={css.indicator}>
+    <div key={item.head} className={style.indicator}>
       <p>{item.head}</p>
-      <div className={css.box}>
-        <span className={css.parameter}>{item.parameter}</span>
+      <div className={style.box}>
+        <span className={style.parameter}>{item.parameter}</span>
         {item.img ? (
-          <img className={css.icon} src={item.img} alt="weather icon" />
+          <img className={style.icon} src={item.img} alt="weather icon" />
         ) : null}
       </div>
     </div>

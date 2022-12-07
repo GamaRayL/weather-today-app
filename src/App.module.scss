@@ -17,23 +17,3 @@ body{
   margin-top: 60px;
   padding: 40px;
 }
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.error {
-  margin: 40px auto 0 auto;
-  text-align: center;
-  font-size: 40px;
-}
-
-@media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-  }
-}

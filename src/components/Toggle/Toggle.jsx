@@ -1,18 +1,18 @@
-import css from "./Toggle.module.scss";
+import style from "./Toggle.module.scss";
 
 export const Toggle = ({ left, right, onChange }) => {
   return (
-    <div className={css.frame}>
-      <label htmlFor="check" className={css.switchToggle}></label>
+    <div className={style.frame}>
+      <label htmlFor="check" className={style.switchToggle}></label>
       <input
-        className={css.checkbox}
+        className={style.checkbox}
         onChange={onChange}
         type="checkbox"
         id="check"
       />
-      <label htmlFor="check" className={css.roller}></label>
-      <span className={css.leftText}>{left}</span>
-      <span className={css.rightText}>{right}</span>
+      <label htmlFor="check" className={style.roller}></label>
+      <span className={style.leftText}>{left}</span>
+      <span className={style.rightText}>{right}</span>
     </div>
   );
 };
