@@ -1,21 +1,25 @@
+import { useState } from "react";
+import { fetchGeonamesData } from "utils/async";
 import css from "./Search.module.scss";
 
-export const Search = ({
-  geonames,
-  getGeonamesArray,
-  setValueOfCity,
-  valueOfCity,
-  changeCity,
-}) => {
+export const Search = ({ setValueOfCity, valueOfCity, changeCity }) => {
+  const [geonames, setGeonames] = useState();
+
+  const onChangeHandler = (e) => {
+    const value = e.target.value;
+
+    setValueOfCity(value);
+    fetchGeonamesData(value).then((data) =>
+      data.status ? console.log(data.status.message) : setGeonames(data)
+    );
+  };
+
   return (
     <div className={css.container}>
       <input
         value={valueOfCity}
         className={css.input}
-        onChange={(e) => {
-          getGeonamesArray(e.target.value);
-          setValueOfCity(e.target.value);
-        }}
+        onChange={onChangeHandler}
         placeholder="ENTER THE CITY"
         type="text"
       />

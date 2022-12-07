@@ -1,7 +1,7 @@
 import { showWind, showUv } from "components/statements";
 import css from "./Indicator.module.scss";
 
-export const IndicatorsArray = (weatherDataFromApi, unit) => {
+export const arIndicators = (weatherDataFromApi, unit) => {
   if (!weatherDataFromApi) return [];
   const current = weatherDataFromApi.current;
   const forecastDay = weatherDataFromApi.forecast.forecastday[0];
@@ -67,8 +67,8 @@ export const IndicatorsArray = (weatherDataFromApi, unit) => {
   ];
 };
 
-export const Indicator = ({ indicatorsOfArray }) => {
-  return indicatorsOfArray.map((item) => (
+export const Indicator = ({ indicatorsArray }) => {
+  return indicatorsArray.map((item) => (
     <div key={item.head} className={css.indicator}>
       <p>{item.head}</p>
       <div className={css.box}>
