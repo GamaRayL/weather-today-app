@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { fetchGeonamesData } from "utils/async";
-import style from "./Search.module.scss";
+import style from "./styles.module.scss";
 
 export const Search = (props) => {
   const { setValueOfCity, valueOfCity, changeCity } = props;

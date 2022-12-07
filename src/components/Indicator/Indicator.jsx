@@ -1,5 +1,5 @@
 import { showWind, showUv } from "components/statements";
-import style from "./Indicator.module.scss";
+import style from "./styles.module.scss";
 
 export const arIndicators = (weatherDataFromApi, unit) => {
   if (!weatherDataFromApi) return [];

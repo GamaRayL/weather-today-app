@@ -3,7 +3,7 @@ import { Indicator, arIndicators } from "components/Indicator";
 import { TodayForecast } from "components/TodayForecast";
 import { getDate } from "utils/func";
 import arWeather from "store/weather.json";
-import style from "./Window.module.scss";
+import style from "./styles.module.scss";
 
 export const Window = (props) => {
   const { unit, correctCity, weatherDataFromApi } = props;

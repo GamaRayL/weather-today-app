@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import arWeather from "store/weather.json";
-import style from "./TodayForecast.module.scss";
+import style from "./styles.module.scss";
 
 export const TodayForecast = ({ unit, arWeatherItemsByHour }) => {
   const getWholeDayIcon = useCallback((item) => {

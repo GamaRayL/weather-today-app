@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Window, Search, Toggle } from "components";
 import { fetchWeatherData } from "utils/async";
-import style from "./WeatherWidget.module.scss";
+import style from "./styles.module.scss";
 
 export const WeatherWidget = () => {
   const [unit, setUnit] = useState(true);

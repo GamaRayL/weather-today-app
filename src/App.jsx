@@ -1,5 +1,5 @@
 import { WeatherWidget } from "components/WeatherWidget";
-import style from "./App.module.scss";
+import style from "./styles.module.scss";
 
 function App() {
   return (

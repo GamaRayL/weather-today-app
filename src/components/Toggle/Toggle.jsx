@@ -1,4 +1,4 @@
-import style from "./Toggle.module.scss";
+import style from "./styles.module.scss";
 
 export const Toggle = ({ left, right, onChange }) => {
   return (
