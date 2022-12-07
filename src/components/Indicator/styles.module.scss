@@ -1,67 +1,61 @@
 .indicator {
-    display: flex;
-    color: #5353538a;
-    text-transform: uppercase;
-    font-size: 18px;
-    padding: 10px;
+  display: flex;
+  color: #5353538a;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px;
 }
 
 .box {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .parameter {
-    color: #535353;
-    font-size: 24px;
+  color: #535353;
+  font-size: 24px;
 }
 
 .icon {
-    width: 52px;
-    height: 52px;
+  width: 52px;
+  height: 52px;
 }
 
-@media screen and (max-width: 1030px) {
-    .indicator {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 960px) {
-    .indicator {
-        font-size: 16px;
-    }
-    .icon {
-        width: 48px;
-        height: 48px;
-    }
-    .parameter {
-        font-size: 20px;
-    }
+@media screen and (max-width: 1140px) {
+  .indicator {
+    font-size: 16px;
+  }
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+  .parameter {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 860px) {
-    .indicator {
-        font-size: 14px;
-    }
-    .icon {
-        width: 38px;
-        height: 38px;
-    }
-    .parameter {
-        font-size: 18px;
-    }
+  .indicator {
+    font-size: 14px;
+  }
+  .icon {
+    width: 38px;
+    height: 38px;
+  }
+  .parameter {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 435px) {
-    .indicator {
-        font-size: 8px;
-    }
-    .icon {
-        width: 24px;
-        height: 24px;
-    }
-    .parameter {
-        font-size: 14px;
-    }
+  .indicator {
+    font-size: 8px;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  .parameter {
+    font-size: 14px;
+  }
 }
