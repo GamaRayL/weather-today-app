@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Indicator, arIndicators } from "components/Indicator";
+import { Indicator, getIndicatorsArray } from "components/Indicator";
 import { TodayForecast } from "components/TodayForecast";
 import { getDate } from "utils/func";
 import arWeather from "store/weather.json";
@@ -28,8 +28,8 @@ export const Window = (props) => {
     }
   };
 
-  const indicatorsArray = useMemo(
-    () => arIndicators(weatherDataFromApi, unit),
+  const arIndicators = useMemo(
+    () => getIndicatorsArray(weatherDataFromApi, unit),
     [weatherDataFromApi, unit]
   );
 
@@ -69,7 +69,7 @@ export const Window = (props) => {
       </div>
       <div className={style.secondary}>
         <div className={style.secondary__day}>
-          <Indicator indicatorsArray={indicatorsArray} />
+          <Indicator arIndicators={arIndicators} />
         </div>
         <div className={style.secondary__forecastDay}>
           <TodayForecast
