@@ -18,6 +18,10 @@
 .primary__icon {
   max-width: 280px;
   max-height: 280px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .primary__city, .primary__country, .primary__temp {
