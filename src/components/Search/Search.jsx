@@ -7,7 +7,6 @@ export const Search = (props) => {
   const [geonames, setGeonames] = useState();
   const [err, setErr] = useState();
   const locationRef = useRef(null);
-  console.log('bla');
 
   const onChangeHandler = (e) => {
     const value = e.target.value;

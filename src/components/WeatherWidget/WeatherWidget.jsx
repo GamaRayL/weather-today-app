@@ -1,26 +1,27 @@
-import { useEffect, useState } from "react";
-import { Window, Search, Toggle } from "components";
-import { fetchWeatherData } from "utils/async";
-import style from "./styles.module.scss";
+import { useEffect, useState } from 'react';
+import { Window, Search, Toggle } from 'components';
+import { fetchWeatherData } from 'utils/async';
+import style from './styles.module.scss';
 
 export const WeatherWidget = () => {
   const [unit, setUnit] = useState(true);
-  const [city, setCity] = useState("Kiev");
-  const [valueOfCity, setValueOfCity] = useState("");
-  const [correctCity, setCorrectCity] = useState("");
+  const [city, setCity] = useState('Kiev');
+  const [valueOfCity, setValueOfCity] = useState('');
+  const [correctCity, setCorrectCity] = useState('');
   const [weatherDataFromApi, setWeatherDataFromApi] = useState(false);
-  const [error, setError] = useState("");
-
+  const [error, setError] = useState('');
+  
   useEffect(() => {
+    console.log('fetch');
     fetchWeatherData(city).then((data) =>
       data.error ? setError(data.error.message) : setWeatherDataFromApi(data)
     );
   }, [city, setError, setWeatherDataFromApi]);
 
   const onChangeCityHandler = (coordinates) => {
-    setCity(coordinates.lat + "," + coordinates.lng);
+    setCity(`${coordinates.lat}, ${coordinates.lng}`);
     setCorrectCity(coordinates.name);
-    setValueOfCity("");
+    setValueOfCity('');
   };
 
   const onChangeUnitHandler = () => {
@@ -41,8 +42,8 @@ export const WeatherWidget = () => {
       <div className={style.container}>
         <Toggle
           onChange={onChangeUnitHandler}
-          left={"°C"}
-          right={"°F"}
+          left={'°C'}
+          right={'°F'}
         ></Toggle>
         <Search
           setValueOfCity={setValueOfCity}
